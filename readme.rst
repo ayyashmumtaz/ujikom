@@ -1,6 +1,5 @@
 ###################
-Aplikasi Pengaduan Masyarakat (UJIKOM) 
-Made with Codeigniter 
+Aplikasi Pengaduan Masyarakat (UJIKOM) Made with Codeigniter 
 ###################
 
 CodeIgniter is an Application Development Framework - a toolkit - for people
