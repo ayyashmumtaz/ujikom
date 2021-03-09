@@ -28,29 +28,7 @@
         <div class="user-info">
           <h6 class="user-name mb-0">
 
-<?php
-$data['user'] = $this->db->get_where('user', ['username' =>
-    $this->session->userdata('nama')])->row_array();
-
-
-
-
-
-          
-                
-
-
-
-
-                    if ($this->session->userdata('status') == "user") {
-                      echo "Hey, ";
-                      echo $data['user']['nama'];
-                    } else {
-                      echo "Hey, Tamu!"; 
-                    }
-                    
-                    
-                ?></h6>
+</h6>
          
         </div>
       </div>
