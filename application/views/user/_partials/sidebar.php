@@ -7,7 +7,7 @@
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
         <!-- Logo Wrapper-->
-        <div class="logo-wrapper"><a href="<?= site_url('');?>"><img style="background-size: 10px;" src="<?= base_url('img/core-img/logo.jpeg');?>" alt=""></a></div>
+        <div class="logo-wrapper"><a href="<?= site_url('');?>"><img style="background-size: 10px;" src="<?= base_url('assets/img/core-img/logo.png');?>" alt=""></a></div>
         <!-- Search Form-->
         <div class="top-search-form">
          
