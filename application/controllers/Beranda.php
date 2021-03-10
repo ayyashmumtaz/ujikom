@@ -6,6 +6,7 @@ class Beranda extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		
 		$this->load->model('Model_pengaduan');
 
 	}
@@ -18,6 +19,13 @@ class Beranda extends CI_Controller {
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/index.php', $data);
 		$this->load->view('user/_partials/footer');
+	}
+
+	public function akun_saya()
+	{
+		if($this->session->userdata('status') != "user"){
+            redirect(site_url("login"));
+        }
 	}
 
 }
