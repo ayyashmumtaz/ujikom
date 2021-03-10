@@ -2,7 +2,7 @@
 PaduMas, by Ayyash Mumtaz Hafidz
 ###################
 
-PaduMas (Tempat Pengaduan Masyarakat). Aplikasi ini dibuat dengan menggunakan bahasa pemrograman PHP, ditenagai Framework Codeigniter 3.1. PaduMas berfungsi sebagai saling melaporkan apapun kejadian di ruang publik masyarakat, didalam apl ini terdapat juga fitur untuk saling memberi aspirasi publik agar menjadi bahan koreksi antar-masyarakat. Sebenarnya apl ini dibuat untuk menjadi bahan penilaian Ujikom saya di SMK Fatahillah Cileungsi.
+PaduMas (Tempat Pengaduan Masyarakat). Aplikasi ini dibuat dengan menggunakan bahasa pemrograman PHP, ditenagai Framework Codeigniter 3.1. Tetapi uniknya aplikasi ini saya build kedalam android package. Langsung dalam bentuk apk. Bisa dibilang ini adalah PWA (Progressive Web Apps). PaduMas berfungsi sebagai saling melaporkan apapun kejadian di ruang publik masyarakat, didalam apl ini terdapat juga fitur untuk saling memberi aspirasi publik agar menjadi bahan koreksi antar-masyarakat. Sebenarnya apl ini dibuat untuk menjadi bahan penilaian Ujikom saya di SMK Fatahillah Cileungsi.
 
 *******************
 CSS & JS yang ditambahkan
