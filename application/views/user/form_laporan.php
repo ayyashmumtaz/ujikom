@@ -11,7 +11,7 @@
             </div>
               <div class="form-group text-left mb-4"><span>NIK</span>
               <label for="username"><i class="lni-postcard"></i></label>
-              <input class="form-control" type="text" name="nik" id="form" value="1" readonly>
+              <input class="form-control" type="text" name="nik" id="form" value="<?= $this->session->userdata('nik'); ?>" readonly>
             </div>
             <div class="form-group text-left mb-4"><span>Isi Laporan</span>
               <label for="username"><i class="lni-library"></i></label>
