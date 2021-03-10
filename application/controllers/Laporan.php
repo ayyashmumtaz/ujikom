@@ -5,7 +5,10 @@ class Laporan extends CI_Controller {
 
 	public function index()
 	{
-		
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/form_laporan.php');
+		$this->load->view('user/_partials/footer');
 	}
 
 }
