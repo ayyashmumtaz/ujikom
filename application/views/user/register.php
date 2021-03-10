@@ -3,10 +3,6 @@
       <div class="background-shape"></div>
       <div class="container">
         <!-- Register Form-->
-
-<script>
-    
-</script>
         <div class="register-form mt-5 px-4">
           <form action="<?= site_url('register/input_data_register');?>" class="form-user" method="post">
             <div class="form-group text-left mb-4"><span>NIK</span>
