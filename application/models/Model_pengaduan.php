@@ -19,6 +19,15 @@ public function input_laporan_db($laporan_data)
 		$this->db->insert('pengaduan',$laporan_data);	
 	}
 
+	public function data_akun(){
+        $data = $this->session->userdata('nik');
+  		$this->db->select('*');
+ 		$this->db->where('nik', $data);//
+  		$this->db->from('masyarakat');
+  		$query = $this->db->get();
+  		return $query->result();
+}
+
 }
 
 /* End of file Model_pengaduan.php */
