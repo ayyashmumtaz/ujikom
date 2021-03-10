@@ -34,9 +34,6 @@
       </div>
       <!-- Sidenav Nav-->
       <ul class="sidenav-nav">
-        <li><a href="<?= site_url('cart'); ?>"><i class="lni-cart"></i>Keranjang Belanja</a></li>
-        <li><a href="<?= site_url('product'); ?>"><i class="lni-facebook-messenger"></i>Inbox</a></li>
-        <li><a href="<?= site_url('news'); ?>"><i class="lni-book"></i>News & Tips</a></li>
         <li><a href="<?= site_url('login/logout'); ?>"><i class="lni-power-switch"></i>Sign Out</a></li>
       </ul>
       <!-- Go Back Button-->
