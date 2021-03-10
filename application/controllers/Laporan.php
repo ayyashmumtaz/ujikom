@@ -11,6 +11,22 @@ class Laporan extends CI_Controller {
 		$this->load->view('user/_partials/footer');
 	}
 
+	public function aspirasi()
+	{
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/form_aspirasi.php');
+		$this->load->view('user/_partials/footer');
+	}
+
+	public function informasi()
+	{
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/form_informasi.php');
+		$this->load->view('user/_partials/footer');
+	}
+
 }
 
 /* End of file Laporan.php */
