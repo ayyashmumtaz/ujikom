@@ -2,9 +2,9 @@
       <div class="suha-footer-nav h-100">
         <ul class="h-100 d-flex align-items-center justify-content-between">
           <li ><a href="<?= site_url(''); ?>"><i class="lni-home"></i>Home</a></li>
-          <li><a href="<?= site_url('product'); ?>"><i class="lni-grid-alt"></i>Kategori</a></li>
-          <li><a href="<?= site_url('order/belanja'); ?>"><i class="lni-cart"></i>Order Saya</a></li>
-          <li><a href="<?= site_url('Account'); ?>"><i class="lni-user"></i>Account</a></li>
+          <li><a href="<?= site_url('ruang_public'); ?>"><i class="lni-users"></i>Ruang Publik</a></li>
+          <li><a href="<?= site_url('My_padumas'); ?>"><i class="lni-library"></i>PaduMas Saya</a></li>
+          <li><a href="<?= site_url('akun_saya'); ?>"><i class="lni-user"></i>Akun Saya</a></li>
         </ul>
       </div>
     </div>
