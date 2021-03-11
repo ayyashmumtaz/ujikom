@@ -6,15 +6,16 @@ class Laporan extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		/*if($this->session->userdata('status') != "user"){
-			$this->session->set_flashdata('login-dulu', 'Gagal!');
+		if($this->session->userdata('status') != "user"){
+			$this->session->set_flashdata('not-login', 'Gagal!');
             redirect(site_url("Beranda"));
-        }*/
+        }
         $this->load->model('Model_pengaduan');
 	}
 
 	public function index()
 	{
+
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/form_laporan.php');
