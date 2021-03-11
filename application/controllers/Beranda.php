@@ -26,6 +26,11 @@ class Beranda extends CI_Controller {
 		if($this->session->userdata('status') != "user"){
             redirect(site_url("login"));
         }
+        $data['user'] = $this->Model_pengaduan->data_akun();
+        $this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/account.php', $data);
+		$this->load->view('user/_partials/footer');
 	}
 
 }
