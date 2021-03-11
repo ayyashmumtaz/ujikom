@@ -166,6 +166,18 @@
 <?php endif; ?>
 
 
+<?php if ($this->session->flashdata('success-logout')): ?>
+  <script>
+    Swal.fire({
+      icon: 'success',
+      title: 'Logout Berhasil!',
+      text: 'Sampai jumpa! Terimakasih telah mengunjungin PaduMas!',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  </script>
+
+<?php endif; ?>
 <!-- Single Weekly Product Card-->
 
 
