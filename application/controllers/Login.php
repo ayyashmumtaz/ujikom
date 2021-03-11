@@ -43,6 +43,15 @@ class Login extends CI_Controller {
 		}
 	}
 
+		function logout(){
+		
+		
+		$this->session->sess_destroy();
+		$this->session->set_flashdata('success-logout', 'Berhasil!');
+		redirect('beranda');
+
+	}
+
 }
 
 /* End of file Login.php */
