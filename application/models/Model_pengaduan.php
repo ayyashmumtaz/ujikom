@@ -28,6 +28,22 @@ public function input_laporan_db($laporan_data)
   		return $query->result();
 }
 
+public function jumlah_selesai()
+{   
+    $query = $this->db->where('status', 'selesai')
+                        ->get('pengaduan');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+
+
 }
 
 /* End of file Model_pengaduan.php */
