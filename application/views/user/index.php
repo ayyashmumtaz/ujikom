@@ -2,7 +2,7 @@
 
 <div class="page-content-wrapper">
 
-  
+
   <div class="hero-slides owl-carousel">
 
 
@@ -36,7 +36,7 @@
       <div class="section-heading d-flex align-items-center justify-content-between">
  <div class="col-4">
             <div class="card mb-3 catagory-card" style="background-color: green;">
-              <div class="card-body"><h3 style="color: white;">286</h3><span style="color: white;">Laporan Telah Selesai</span></div>
+              <div class="card-body"><h3 style="color: white;"><?= $jumlah_selesai;?></h3><span style="color: white;">Laporan Telah Selesai</span></div>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ class Beranda extends CI_Controller {
 	public function index()
 	{
 		$data['banner'] = $this->Model_pengaduan->carousel();
-		
+		$data['jumlah_selesai'] = $this->Model_pengaduan->jumlah_selesai();
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/index.php', $data);
