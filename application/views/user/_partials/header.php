@@ -14,8 +14,14 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/slider.css'); ?>">
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
-
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+      <script>
+    UpUp.start({
+      'content-url': '<?php echo site_url('offline');?>'
+    });
+  </script>
+
 
   </head>
   <body>
