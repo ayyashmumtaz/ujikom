@@ -5,13 +5,17 @@
         <!-- Register Form-->
         <div class="register-form mt-5 px-4">
           <form action="<?= site_url('Laporan/input_laporan');?>" class="form-user" method="post" enctype="multipart/form-data">
-            <div class="form-group text-left mb-4"><span>ID Pengaduan</span>
+            <div class="form-group text-left mb-4"><span>ID Pengaduan (otomatis)</span>
               <label for="username"><i class="lni-user"></i></label>
               <input class="form-control" type="text" name="id_pengaduan" value="<?= uniqid();?>" readonly>
             </div>
-              <div class="form-group text-left mb-4"><span>NIK</span>
+              <div class="form-group text-left mb-4"><span>NIK (otomatis)</span>
               <label for="username"><i class="lni-postcard"></i></label>
               <input class="form-control" type="text" name="nik" id="form" value="<?= $this->session->userdata('nik'); ?>" readonly>
+            </div>
+            <div class="form-group text-left mb-4"><span>Judul Laporan</span>
+              <label for="username"><i class="lni-book"></i></label>
+              <input class="form-control" type="text" name="judul_pengaduan" id="form">
             </div>
             <div class="form-group text-left mb-4"><span>Isi Laporan</span>
               <label for="username"><i class="lni-library"></i></label>

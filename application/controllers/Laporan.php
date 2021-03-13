@@ -42,7 +42,7 @@ class Laporan extends CI_Controller {
 	public function input_laporan()
 	{
 		$id_pengaduan     = $this->input->post('id_pengaduan');
-		$judul_laporan		= $this->input->post('judul_laporan');
+		$judul_pengaduan		= $this->input->post('judul_pengaduan');
 		$nik	   				= $this->input->post('nik');
 		$isi_laporan			= $this->input->post('isi_laporan');
 		$status    	        	= '0';
@@ -63,6 +63,7 @@ class Laporan extends CI_Controller {
         $laporan_data = array(
 			'id_pengaduan' => $id_pengaduan,
 			'nik' => $nik,
+			'judul_pengaduan' => $judul_pengaduan,
 			'isi_laporan' => $isi_laporan,
 			'foto' => $upload['file_name'],
 			'status' => $status,
@@ -78,12 +79,17 @@ class Laporan extends CI_Controller {
 
 	public function input_aspirasi()
 	{
-		$id_aspirasi = uniqid();
-		$aspirasi = $this->input->post('aspirasi');
 
+		$id_aspirasi = uniqid();
+		$judul_aspirasi = $this->input->post('judul_aspirasi');
+		$aspirasi = $this->input->post('aspirasi');
+		$niks = $this->session->userdata('nik');
+		$nik = $this->input->post($niks);
 		$aspirasi_data = array(
 			'id_aspirasi' => $id_aspirasi,
 			'aspirasi' => $aspirasi,
+			'judul_aspirasi' => $judul_aspirasi,
+			'nik' => $nik
 				);
 		$this->Model_pengaduan->input_aspirasi_db($aspirasi_data);
 		$this->session->set_flashdata('berhasil-input', 'berhasil!');
@@ -95,11 +101,14 @@ class Laporan extends CI_Controller {
 		$niks = $this->session->userdata('nik');
 		$id_informasi = uniqid();
 		$nik = $this->input->post($niks);
+		
 		$informasi = $this->input->post('informasi');
 
 		$informasi_data = array(
 			'id_informasi' => $id_informasi,
 			'informasi' => $informasi,
+
+			'nik' => $nik
 				);
 		$this->Model_pengaduan->input_informasi_db($informasi_data);
 		$this->session->set_flashdata('berhasil-input', 'berhasil!');

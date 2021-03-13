@@ -21,9 +21,23 @@
       <div class="col-12 col-md-6">
               <a href=""><div class="card weekly-product-card">
                 <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side"><a class="wishlist-btn" href=""></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
-                  <div class="product-description"><a class="product-title d-block" href=""><?= $lapor->judul_laporan?></a>
-                    <div class="product-rating"><button class="btn btn-sm btn-success" disabled>Telah Selesai</button></div></a>
+                  <div class="product-thumbnail-side"><a class="wishlist-btn" href=""></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('assets/img/laporan/').$lapor->foto;?>" alt=""></a></div>
+                  <div class="product-description"><a class="product-title d-block" href=""><?= $lapor->judul_pengaduan?></a>
+                    <div class="product-rating"><?php switch ($lapor->status) {
+                      case 0 :
+                        echo '<button class="btn btn-sm btn-danger" disabled>Belum Diproses</button>';
+                        break;
+                        case 'proses' :
+                        echo '<button class="btn btn-sm btn-info" disabled>Sedang Diproses</button>';
+                        break;
+                        case 0 :
+                        echo '<button class="btn btn-sm btn-success" disabled>Selesai</button>';
+                        break;
+                      
+                      default:
+                        # code...
+                        break;
+                    } ?></button></div></a>
                   </div>
                 </div>
               </div>
