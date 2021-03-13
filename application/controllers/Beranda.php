@@ -15,6 +15,8 @@ class Beranda extends CI_Controller {
 	{
 		$data['banner'] = $this->Model_pengaduan->carousel();
 		$data['jumlah_selesai'] = $this->Model_pengaduan->jumlah_selesai();
+		$data['jumlah_proses'] = $this->Model_pengaduan->jumlah_proses();
+		$data['jumlah_belum_diproses'] = $this->Model_pengaduan->jumlah_belum_diproses();
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/index.php', $data);
@@ -32,6 +34,23 @@ class Beranda extends CI_Controller {
 		$this->load->view('user/account.php', $data);
 		$this->load->view('user/_partials/footer');
 	}
+
+	public function ruang_public()
+	{
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/ruang_public.php');
+		$this->load->view('user/_partials/footer');
+	}
+
+	public function my_padumas()
+	{
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/padumas_saya.php');
+		$this->load->view('user/_partials/footer');
+	}
+
 
 
 public function abis_logout()
