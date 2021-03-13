@@ -45,9 +45,16 @@ class Beranda extends CI_Controller {
 
 	public function my_padumas()
 	{
+		if($this->session->userdata('status') != "user"){
+			$this->session->set_flashdata('not-login-room', 'Gagal!');
+            redirect(site_url("Beranda"));
+        }
+		$data['laporan'] = $this->Model_pengaduan->laporan_saya();
+		$data['aspirasi'] = $this->Model_pengaduan->aspirasi_saya();
+		$data['informasi'] = $this->Model_pengaduan->informasi_saya();
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
-		$this->load->view('user/padumas_saya.php');
+		$this->load->view('user/padumas_saya.php', $data);
 		$this->load->view('user/_partials/footer');
 	}
 
