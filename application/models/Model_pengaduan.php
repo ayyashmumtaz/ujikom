@@ -19,6 +19,16 @@ public function input_laporan_db($laporan_data)
 		$this->db->insert('pengaduan',$laporan_data);	
 	}
 
+  public function input_aspirasi_db($laporan_data)
+  {
+    $this->db->insert('aspirasi',$laporan_data); 
+  }
+
+  public function input_informasi_db($laporan_data)
+  {
+    $this->db->insert('informasi',$laporan_data); 
+  }
+
 	public function data_akun(){
         $data = $this->session->userdata('nik');
   		$this->db->select('*');
@@ -70,7 +80,42 @@ public function jumlah_belum_diproses()
     }
 }
 
+public function laporan_saya(){
+        $nik = $this->session->userdata('nik');
+          $hasil = $this->db->select('*')
+                            ->where('nik', $nik)
+                            ->get('pengaduan');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        } else {
+            return array();
+        }
+    }
 
+
+    public function aspirasi_saya(){
+         $nik = $this->session->userdata('nik');
+          $hasil = $this->db->select('*')
+                            ->where('nik', $nik)
+                            ->get('aspirasi');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        } else {
+            return array();
+        }
+    }
+
+    public function informasi_saya(){
+        $nik = $this->session->userdata('nik');
+          $hasil = $this->db->select('*')
+                            ->where('nik', $nik)
+                            ->get('aspirasi');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        } else {
+            return array();
+        }
+    }
 
 }
 

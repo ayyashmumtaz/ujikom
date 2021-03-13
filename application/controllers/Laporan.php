@@ -6,16 +6,16 @@ class Laporan extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		if($this->session->userdata('status') != "user"){
-			$this->session->set_flashdata('not-login', 'Gagal!');
-            redirect(site_url("Beranda"));
-        }
+		
         $this->load->model('Model_pengaduan');
 	}
 
 	public function index()
 	{
-
+		if($this->session->userdata('status') != "user"){
+			$this->session->set_flashdata('not-login', 'Gagal!');
+            redirect(site_url("Beranda"));
+        }
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/form_laporan.php');
@@ -42,6 +42,7 @@ class Laporan extends CI_Controller {
 	public function input_laporan()
 	{
 		$id_pengaduan     = $this->input->post('id_pengaduan');
+		$judul_laporan		= $this->input->post('judul_laporan');
 		$nik	   				= $this->input->post('nik');
 		$isi_laporan			= $this->input->post('isi_laporan');
 		$status    	        	= '0';
@@ -72,10 +73,35 @@ class Laporan extends CI_Controller {
 		redirect('Laporan');
     }else{
             echo $this->upload->display_errors();
-    } 
-   
+    } 	
+	}
 
-		
+	public function input_aspirasi()
+	{
+		$id_aspirasi = uniqid();
+		$aspirasi = $this->input->post('aspirasi');
+
+		$aspirasi_data = array(
+			'id_aspirasi' => $id_aspirasi,
+			'aspirasi' => $aspirasi,
+				);
+		$this->Model_pengaduan->input_aspirasi_db($aspirasi_data);
+		$this->session->set_flashdata('berhasil-input', 'berhasil!');
+		redirect('laporan/aspirasi');
+	}
+
+	public function input_informasi()
+	{
+		$id_informasi = uniqid();
+		$informasi = $this->input->post('informasi');
+
+		$informasi_data = array(
+			'id_informasi' => $id_informasi,
+			'informasi' => $informasi,
+				);
+		$this->Model_pengaduan->input_aspirasi_db($aspirasi_data);
+		$this->session->set_flashdata('berhasil-input', 'berhasil!');
+		redirect('laporan/aspirasi');
 	}
 
 
