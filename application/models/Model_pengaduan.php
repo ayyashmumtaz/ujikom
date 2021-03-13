@@ -52,6 +52,20 @@ public function jumlah_selesai()
     }
 }
 
+
+public function jumlah_total_pengaduan()
+{   
+    $query = $this->db->get('pengaduan');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
 public function jumlah_proses()
 {   
     $query = $this->db->where('status', 'proses')
