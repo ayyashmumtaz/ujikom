@@ -141,8 +141,21 @@
   <script>
     Swal.fire({
       icon: 'warning',
+      title: 'Anda Belum Login!',
+      text: 'Anda harus login untuk melapor, memberikan aspirasi, ataupun menanyakan informasi!',
+      showConfirmButton: true,
+      timer: 3000
+    })
+  </script>
+
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('not-login-room')): ?>
+  <script>
+    Swal.fire({
+      icon: 'warning',
       title: 'Anda Harus Login!',
-      text: 'Anda harus login untuk melakukan pelaporan!',
+      text: 'Untuk melihat PaduMas Saya. Login menggunakan NIK, username dan password yang tersedia!',
       showConfirmButton: true,
       timer: 3000
     })
