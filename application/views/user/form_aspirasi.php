@@ -8,7 +8,7 @@
 
             <div class="form-group text-left mb-4"><span>Masukan Aspirasi Terbaik Anda</span>
               <label for="username"><i class="lni-library"></i></label>
-              <textarea class="form-control" type="text" name="informasi" placeholder="" required=""></textarea>
+              <textarea class="form-control" type="text" name="aspirasi" placeholder="" required=""></textarea>
               <small>Aspirasi anda akan ditampilkan secara publik di Ruang Publik, guna menjadi bahan intropeksi masing-masing.</small>
             </div>
 
