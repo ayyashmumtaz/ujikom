@@ -20,31 +20,31 @@
             </a>
           </li>
               <li class="nav-item ">
-            <a class="nav-link" href="<?= site_url('admin/dokter'); ?>">
+            <a class="nav-link" href="<?= site_url('admin/laporan'); ?>">
               <i class="material-icons">assignment</i>
               <p>Laporan Masyarakat</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?= site_url('admin/product'); ?>">
+            <a class="nav-link" href="<?= site_url('admin/aspirasi'); ?>">
               <i class="material-icons">article</i>
               <p>Aspirasi Masyarakat</p>
             </a>
           </li>
          <li class="nav-item ">
-            <a class="nav-link" href="<?= site_url('admin/order'); ?>">
+            <a class="nav-link" href="<?= site_url('admin/Informasi'); ?>">
               <i class="material-icons">feedback</i>
               <p>Informasi Masyarakat</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?= site_url('admin/order'); ?>">
+            <a class="nav-link" href="<?= site_url('admin/data_admin'); ?>">
               <i class="material-icons">supervised_user_circle</i>
               <p>Data Admin & Petugas</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?= site_url('admin/order'); ?>">
+            <a class="nav-link" href="<?= site_url('admin/data_user'); ?>">
               <i class="material-icons">face</i>
               <p>Data User</p>
             </a>
