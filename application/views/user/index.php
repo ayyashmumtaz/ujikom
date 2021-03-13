@@ -42,13 +42,13 @@
 
           <div class="col-4">
             <div class="card mb-3 catagory-card" style="background-color: orange;">
-              <div class="card-body"><h3 style="color: white;">30</h3><span style="color: white;">Laporan Diproses</span></div>
+              <div class="card-body"><h3 style="color: white;"><?= $jumlah_proses;?></h3><span style="color: white;">Laporan Diproses</span></div>
             </div>
           </div>
 
           <div class="col-4">
             <div class="card mb-3 catagory-card" style="background-color: silver;">
-              <div class="card-body"><h3 style="color: white;">19</h3><span style="color: white;">Laporan Belum Diproses</span></div>
+              <div class="card-body"><h3 style="color: white;"><?= $jumlah_belum_diproses;?></h3><span style="color: white;">Laporan Belum Diproses</span></div>
             </div>
           </div>
 
