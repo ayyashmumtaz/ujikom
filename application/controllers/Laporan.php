@@ -38,6 +38,16 @@ class Laporan extends CI_Controller {
 		$this->load->view('user/_partials/footer');
 	}
 
+	public function detail_laporan($id = null)
+	{
+		$data["adu"] = $this->Model_pengaduan->join_adu_tanggap($id);
+		$data["tanggap"] = $this->Model_pengaduan->join_tanggap($id);
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/detail_pengaduan.php', $data);
+		$this->load->view('user/_partials/footer');
+	}
+
 
 	public function input_laporan()
 	{
@@ -83,8 +93,7 @@ class Laporan extends CI_Controller {
 		$id_aspirasi = uniqid();
 		$judul_aspirasi = $this->input->post('judul_aspirasi');
 		$aspirasi = $this->input->post('aspirasi');
-		$niks = $this->session->userdata('nik');
-		$nik = $this->input->post($niks);
+		$nik = $this->input->post('nik');
 		$aspirasi_data = array(
 			'id_aspirasi' => $id_aspirasi,
 			'aspirasi' => $aspirasi,
@@ -96,20 +105,21 @@ class Laporan extends CI_Controller {
 		redirect('laporan/aspirasi');
 	}
 
-	public function input_informasi()
+	public function input_informasi($id)
 	{
-		$niks = $this->session->userdata('nik');
-		$id_informasi = uniqid();
-		$nik = $this->input->post($niks);
 		
+		$id_informasi = uniqid();
+		$nik = $this->input->post('nik');
 		$informasi = $this->input->post('informasi');
 
 		$informasi_data = array(
 			'id_informasi' => $id_informasi,
 			'informasi' => $informasi,
-
 			'nik' => $nik
 				);
+
+
+		
 		$this->Model_pengaduan->input_informasi_db($informasi_data);
 		$this->session->set_flashdata('berhasil-input', 'berhasil!');
 		redirect('laporan/informasi');

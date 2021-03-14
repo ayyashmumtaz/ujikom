@@ -5,7 +5,11 @@
         <!-- Register Form-->
         <div class="register-form mt-5 px-4">
           <form action="<?= site_url('Laporan/input_aspirasi');?>" class="form-user" method="post" enctype="multipart/form-data">
-
+<input type="hidden" name="nik" value="<?= $this->session->userdata('nik');?>">
+<div class="form-group text-left mb-4"><span>Judul Aspirasi</span>
+              <label for="username"><i class="lni-library"></i></label>
+              <textarea class="form-control" type="text" name="judul_aspirasi" placeholder="" required=""></textarea>
+            </div>
             <div class="form-group text-left mb-4"><span>Masukan Aspirasi Terbaik Anda</span>
               <label for="username"><i class="lni-library"></i></label>
               <textarea class="form-control" type="text" name="aspirasi" placeholder="" required=""></textarea>

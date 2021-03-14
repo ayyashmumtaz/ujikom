@@ -15,7 +15,6 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="<?=base_url('assets/admin/dropzone/dropzone.js');?>"></script>
   <link href="<?= base_url('assets/admin/css/material-dashboard.css?v=2.1.1'); ?>" rel="stylesheet" />
 

@@ -9,10 +9,13 @@ class Model_login extends CI_Model {
 
 	 function auth_admin($username, $password)
     {
-        $query = $this->db->query("SELECT * FROM petugas WHERE username='$username' AND password=$password LIMIT 1");
+        $query = $this->db->query("SELECT * FROM petugas WHERE username='$username' AND password='$password' LIMIT 1");
         return $query;
     }
-
+public function cek_user($data) {
+$query = $this->db->get_where('petugas', $data);
+return $query;
+}
 }
 
 /* End of file Model_login.php */

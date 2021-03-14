@@ -65,6 +65,8 @@ public function abis_logout()
 		$this->session->set_flashdata('success-logout', 'Berhasil!');
 		$data['banner'] = $this->Model_pengaduan->carousel();
 		$data['jumlah_selesai'] = $this->Model_pengaduan->jumlah_selesai();
+		$data['jumlah_proses'] = $this->Model_pengaduan->jumlah_proses();
+		$data['jumlah_belum_diproses'] = $this->Model_pengaduan->jumlah_belum_diproses();
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
 		$this->load->view('user/index_afterlogout.php', $data);
