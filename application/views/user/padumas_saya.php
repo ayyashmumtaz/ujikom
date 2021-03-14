@@ -19,10 +19,10 @@
 <?php foreach($laporan as $lapor) : ?>
 
       <div class="col-12 col-md-6">
-              <a href=""><div class="card weekly-product-card">
+              <a href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"><div class="card weekly-product-card">
                 <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side"><a class="wishlist-btn" href=""></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('assets/img/laporan/').$lapor->foto;?>" alt=""></a></div>
-                  <div class="product-description"><a class="product-title d-block" href=""><?= $lapor->judul_pengaduan?></a>
+                  <div class="product-thumbnail-side"><a class="wishlist-btn" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"></a><a class="product-thumbnail d-block" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"><img src="<?= base_url('assets/img/laporan/').$lapor->foto;?>" alt=""></a></div>
+                  <div class="product-description"><a class="product-title d-block" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"><?= $lapor->judul_pengaduan?></a>
                     <div class="product-rating"><?php switch ($lapor->status) {
                       case 0 :
                         echo '<button class="btn btn-sm btn-danger" disabled>Belum Diproses</button>';
@@ -71,10 +71,10 @@
 <?php foreach($aspirasi as $aspirasi) : ?>
 
       <div class="col-12 col-md-6">
-              <a href=""><div class="card weekly-product-card">
+              <a href="<?= site_url('laporan/detail_aspirasi/').$aspirasi->id_aspirasi;?>"><div class="card weekly-product-card">
                 <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side"><a class="wishlist-btn" href=""></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
-                  <div class="product-description"><a class="product-title d-block" href=""><?= $aspirasi->judul_aspirasi;?></a>
+                  <div class="product-thumbnail-side"><a class="wishlist-btn" href="<?= site_url('laporan/detail_aspirasi/').$aspirasi->id_aspirasi;?>"></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
+                  <div class="product-description"><a class="product-title d-block" href="<?= site_url('laporan/detail_aspirasi/').$aspirasi->id_aspirasi;?>"><?= $aspirasi->judul_aspirasi;?></a>
                     <div class="product-rating"><small><?= $aspirasi->aspirasi;?></small></div></a>
                   </div>
                 </div>
@@ -110,11 +110,11 @@
 <?php foreach($informasi as $info) : ?>
 
       <div class="col-12 col-md-6">
-              <a href=""><div class="card weekly-product-card">
+              <a href="<?= site_url('laporan/detail_informasi/').$info->id_informasi;?>"><div class="card weekly-product-card">
                 <div class="card-body d-flex align-items-center">
-                  <div class="product-thumbnail-side"><a class="wishlist-btn" href=""></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
-                  <div class="product-description"><a class="product-title d-block" href="">Ada Maling</a>
-                    <div class="product-rating"><button class="btn btn-sm btn-success" disabled>Telah Selesai</button></div></a>
+                  <div class="product-thumbnail-side"><a class="wishlist-btn" href="<?= site_url('laporan/detail_informasi/').$info->id_informasi;?>"></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
+                  <div class="product-description"><a class="product-title d-block" href="<?= site_url('laporan/detail_informasi/').$info->id_informasi;?>"><?= $info->informasi;?></a>
+                    <div class="product-rating"><button class="btn btn-sm btn-success" disabled><?= $info->kategori_informasi;?></button></div></a>
                   </div>
                 </div>
               </div>

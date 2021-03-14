@@ -37,7 +37,12 @@
               <p>Informasi Masyarakat</p>
             </a>
           </li>
-          <li class="nav-item ">
+
+         <?php
+            // Cek role user
+            if($this->session->userdata('level') == 'admin'){ // Jika role-nya admin
+                ?>
+               <li class="nav-item ">
             <a class="nav-link" href="<?= site_url('admin/data_admin'); ?>">
               <i class="material-icons">supervised_user_circle</i>
               <p>Data Admin & Petugas</p>
@@ -55,7 +60,11 @@
               <p>Slide Setting</p>
             </a>
           </li>
+                <?php
+            }
+            ?>
           
+         
         </ul>
       </div>
     </div> 

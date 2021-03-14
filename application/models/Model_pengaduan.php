@@ -14,6 +14,32 @@ class Model_pengaduan extends CI_Model {
     
 }
 
+public function get_laporan_list($limit, $start){
+        $query = $this->db->get('pengaduan', $limit, $start);
+        return $query;
+    }
+
+public function get_aspirasi_list($limit, $start){
+        $query = $this->db->get('aspirasi', $limit, $start);
+        return $query;
+    }
+
+public function get_informasi_list($limit, $start){
+        $query = $this->db->get('informasi', $limit, $start);
+        return $query;
+    }
+
+public function get_data_admin($limit, $start){
+        $query = $this->db->get('petugas', $limit, $start);
+        return $query;
+    }
+
+public function get_data_user($limit, $start){
+        $query = $this->db->get('masyarakat', $limit, $start);
+        return $query;
+    }
+
+
 public function input_laporan_db($laporan_data)
 	{
 		$this->db->insert('pengaduan',$laporan_data);	
@@ -82,7 +108,7 @@ public function jumlah_proses()
 
 public function jumlah_belum_diproses()
 {   
-    $query = $this->db->where('status', 0)
+    $query = $this->db->where('status', '0')
                         ->get('pengaduan');
     if($query->num_rows()>0)
     {
@@ -93,6 +119,78 @@ public function jumlah_belum_diproses()
       return 0;
     }
 }
+
+public function jumlah_selesai_informasi()
+{   
+    $query = $this->db->where('status', 'selesai')
+                        ->get('informasi');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+
+public function jumlah_total_pengaduan_informasi()
+{   
+    $query = $this->db->get('informasi');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+public function jumlah_proses_informasi()
+{   
+    $query = $this->db->where('status', 'proses')
+                        ->get('informasi');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+public function jumlah_belum_diproses_informasi()
+{   
+    $query = $this->db->where('status', '0')
+                        ->get('informasi');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+
+public function total_user()
+{   
+    $query = $this->db->get('masyarakat');
+    if($query->num_rows()>0)
+    {
+      return $query->num_rows();
+    }
+    else
+    {
+      return 0;
+    }
+}
+
+
 
 public function laporan_saya(){
         $nik = $this->session->userdata('nik');
@@ -123,13 +221,31 @@ public function laporan_saya(){
         $nik = $this->session->userdata('nik');
           $hasil = $this->db->select('*')
                             ->where('nik', $nik)
-                            ->get('aspirasi');
+                            ->get('informasi');
         if($hasil->num_rows() > 0){
             return $hasil->result();
         } else {
             return array();
         }
     }
+
+public function join_adu_tanggap($id){
+
+     $q = $this->db->select('*')
+                  ->from('pengaduan')
+                  ->where('pengaduan.id_pengaduan',$id)
+                  ->get(); 
+return $q->result(); 
+}
+
+public function join_tanggap($id){
+
+     $q = $this->db->select('*')
+                  ->from('tanggapan')
+                  ->where('tanggapan.id_pengaduan',$id)
+                  ->get(); 
+return $q->result(); 
+}
 
 }
 

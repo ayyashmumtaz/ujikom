@@ -93,6 +93,30 @@
   <script src="<?= base_url('assets/login/vendor/countdowntime/countdowntime.js'); ?>"></script>
 <!--===============================================================================================-->
   <script src="<?= base_url('assets/login/js/main.js'); ?>"></script>
+<?php if ($this->session->flashdata('gagal')): ?>
+  <script>
+    Swal.fire({
+      icon: 'warning',
+      title: 'Login Gagal!',
+      text: 'Username atau Password Salah!',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  </script>
 
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('failed')): ?>
+  <script>
+    Swal.fire({
+      icon: 'warning',
+      title: 'Login Gagal!',
+      text: 'Username atau Password Salah!',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  </script>
+
+<?php endif; ?>
 </body>
 </html>
