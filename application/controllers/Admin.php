@@ -274,6 +274,16 @@ public function validasi($id)
         $this->load->view('admin/include/footer.php');
 }
 
+public function validasi_informasi($id)
+{
+    $data["data"] = $this->Model_admin->getById($id);
+    $this->load->view('admin/include/header.php');
+        $this->load->view('admin/include/sidebar.php');
+        $this->load->view('admin/include/navbar.php');
+        $this->load->view('admin/validasi_informasi.php', $data);
+        $this->load->view('admin/include/footer.php');
+}
+
 
 public function add_tanggapan()
     {
@@ -302,6 +312,49 @@ public function add_tanggapan()
         $this->session->set_flashdata('success', 'Tanggapan berhasil di input!');
         redirect('admin/laporan');
     }
+
+
+    public function add_informasi()
+    {
+        $id_tanggapan = uniqid();
+        $id_informasi = $this->input->post('id_informasi');
+        $jawaban = $this->input->post('jawaban');
+        $id_petugas = $this->input->post('id_petugas');
+        $status = $this->input->post('status');
+
+
+        $informasi = array(
+            'id_tanggapan' => $id_tanggapan,
+            'id_informasi' => $id_informasi,
+            'jawaban' => $jawaban,
+            'id_petugas' => $id_petugas
+                );
+
+       $data = array(
+        'id_informasi' => $this->input->post('id_informasi'),
+        'status' => $this->input->post('status')
+    );
+
+    
+        $this->Model_admin->up_info_status($data);
+        $this->Model_admin->input_informasi_db($informasi);
+        $this->session->set_flashdata('success', 'Tanggapan berhasil di input!');
+        redirect('admin/informasi');
+    }
+
+        public function selesai_pengaduan($id)
+        {
+            
+        $data = array(
+        'id_pengaduan' => $id,
+        'status' => 'selesai'
+    );
+ 
+        $this->Model_admin->selesai_status($data);
+        $this->session->set_flashdata('success', 'Pengaduan Berhasil Diselesaikan!');
+        redirect('admin/laporan');
+        }
+
 }
 
 /* End of file Admin.php */

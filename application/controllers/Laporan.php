@@ -48,6 +48,16 @@ class Laporan extends CI_Controller {
 		$this->load->view('user/_partials/footer');
 	}
 
+public function detail_informasi($id = null)
+	{
+		$data["adu"] = $this->Model_pengaduan->join_info_tanggap($id);
+		$data["tanggap"] = $this->Model_pengaduan->join_jawaban($id);
+		
+		$this->load->view('user/_partials/header');
+		$this->load->view('user/_partials/sidebar');
+		$this->load->view('user/detail_informasi.php', $data);
+		$this->load->view('user/_partials/footer');
+	}
 
 	public function input_laporan()
 	{
@@ -105,7 +115,7 @@ class Laporan extends CI_Controller {
 		redirect('laporan/aspirasi');
 	}
 
-	public function input_informasi($id)
+	public function input_informasi()
 	{
 		
 		$id_informasi = uniqid();
@@ -118,8 +128,6 @@ class Laporan extends CI_Controller {
 			'nik' => $nik
 				);
 
-
-		
 		$this->Model_pengaduan->input_informasi_db($informasi_data);
 		$this->session->set_flashdata('berhasil-input', 'berhasil!');
 		redirect('laporan/informasi');

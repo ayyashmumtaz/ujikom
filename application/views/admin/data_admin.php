@@ -4,7 +4,8 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">List Pengaduan 
+                  <h4 class="card-title ">List Pengaduan <a class="btn btn-default" href="<?= site_url('admin/add_admin'); ?>" style="float: right;
+    display: block;" >+ ADD</a></h4>
                  
 
                 </div>

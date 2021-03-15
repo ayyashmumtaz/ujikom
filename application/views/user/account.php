@@ -35,24 +35,7 @@
         <!-- Settings Wrapper-->
         <div class="settings-wrapper py-3">       
          <?php endforeach; ?>
-          <div class="card settings-card">
-            <div class="card-body">
-              <!-- Single Settings-->
-              <div class="single-settings d-flex align-items-center justify-content-between">
-                <div class="title"><i class="lni-question-circle"></i><span>Dukungan</span></div>
-                <div class="data-content"><a class="pl-4" href="<?= site_url('support'); ?>"><i class="lni-chevron-right"></i></a></div>
-              </div>
-            </div>
-          </div>
-          <div class="card settings-card">
-            <div class="card-body">
-              <!-- Single Settings-->
-              <div class="single-settings d-flex align-items-center justify-content-between">
-                <div class="title"><i class="lni-protection"></i><span>Privacy Policy</span></div>
-                <div class="data-content"><a class="pl-4" href="<?= site_url('privacy'); ?>"><i class="lni-chevron-right"></i></a></div>
-              </div>
-            </div>
-          </div>
+      
           <div class="card settings-card">
             <div class="card-body">
               <!-- Single Settings-->

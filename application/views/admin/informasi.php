@@ -9,9 +9,9 @@
 
                 </div>
                 <div class="card-body">
-                  <?php if ($this->session->flashdata('success-delete')): ?>
+                  <?php if ($this->session->flashdata('success')): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <?php echo $this->session->flashdata('success-delete'); ?>
+          <?php echo $this->session->flashdata('success'); ?>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -66,13 +66,14 @@
                           <td>
                            <?php switch ($laporan->status) {
                       case '0' :
-                        echo "<a class='btn btn-info' href=".site_url("admin/validasi/".$laporan->id_informasi).'>Tanggapi</a>';
+                        echo "<a class='btn btn-info' href=".site_url("admin/validasi_informasi/".$laporan->id_informasi).'>Tanggapi</a>';
                         break;
                         case 'proses' :
-                        echo "<a class='btn btn-success' href=".site_url("admin/validasi/".$laporan->id_informasi).'>Sudah Ditanggapi</a>';
+                        echo "<a class='btn btn-warning' href=".site_url("admin/edit_validasi/".$laporan->id_informasi).'>Edit Tanggapan</a>';
+                        echo "<a class='btn btn-success' href=".site_url("admin/selesai_informasi/".$laporan->id_informasi).'>Selesaikan</a>';
                         break;
                         case 'selesai' :
-                        echo "<a class='btn btn' href=".site_url("admin/validasi/".$laporan->id_informasi).' disabled >Selesai</a>';
+                        echo "<a class='btn btn' disabled >Selesai</a>";
                         break;
                       
                       default:
