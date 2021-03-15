@@ -355,6 +355,54 @@ public function add_tanggapan()
         redirect('admin/laporan');
         }
 
+        public function addCarousel()
+    {
+
+        $this->load->view('admin/include/header.php');
+        $this->load->view('admin/include/sidebar.php');
+        $this->load->view('admin/include/navbar.php');
+        $this->load->view('admin/addCarousel');
+        $this->load->view('admin/include/footer.php');
+    }
+
+    public function addCarl()
+    {
+        $id = uniqid();
+
+    $config['upload_path']          = './assets/img/bg-img/';
+    $config['allowed_types']        = 'gif|jpg|png|jpeg|bmp';
+    $config['file_name']            = $id;
+    $config['overwrite']            = true;
+   // $config['max_size']             = 2048; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('img')) {
+        $upload = $this->upload->data();
+        $carousel_data = array(
+            'id' => $id,
+            'img' =>$upload['file_name']
+        );
+
+        $this->Model_pengaduan->input_carousel_db($carousel_data);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        
+        redirect('admin/addCarousel');
+    
+    }
+}
+
+public function deleteCarousel($id=null)
+    {
+        if (!isset($id)) show_404();
+
+        if ($this->Model_pengaduan->deleteCarousel($id)) {
+            redirect(site_url('admin/carousel'));
+        }
+    }
+
 }
 
 /* End of file Admin.php */

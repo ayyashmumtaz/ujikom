@@ -45,6 +45,11 @@ public function input_laporan_db($laporan_data)
 		$this->db->insert('pengaduan',$laporan_data);	
 	}
 
+  public function input_carousel_db($laporan_data)
+  {
+    $this->db->insert('carousel',$laporan_data); 
+  }
+
   public function input_aspirasi_db($laporan_data)
   {
     $this->db->insert('aspirasi',$laporan_data); 
@@ -281,6 +286,11 @@ public function aspirasi_all()
    return $this->db->get('aspirasi')->result();
 }
 
+private $_tab = "carousel";
+    public function deleteCarousel($id)
+    {
+        return $this->db->delete($this->_tab, array("id" => $id));
+    }
 }
 /* End of file Model_pengaduan.php */
 /* Location: ./application/models/Model_pengaduan.php */

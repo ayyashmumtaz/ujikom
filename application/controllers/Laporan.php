@@ -133,6 +133,32 @@ public function detail_informasi($id = null)
 		redirect('laporan/informasi');
 	}
 
+public function addCarl()
+    {
+    	$id = uniqid();
+
+    $config['upload_path']          = './assets/img/laporan/';
+    $config['allowed_types']        = 'gif|jpg|png|jpeg|bmp';
+    $config['file_name']            = $id;
+    $config['overwrite']			= true;
+   // $config['max_size']             = 2048; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('img')) {
+        $upload = $this->upload->data();
+        $carousel_data = array(
+			'id' => $id,
+		);
+
+		$this->Model_pengaduan->input_laporan_db($carousel_data);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        
+        redirect('admin/addCarousel');
+    
+    }
 
 }
 
