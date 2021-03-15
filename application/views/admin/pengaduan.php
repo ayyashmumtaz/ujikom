@@ -4,7 +4,9 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">List Pengaduan 
+                  <h4 class="card-title ">List Pengaduan <form class="" action="<?php echo base_url('export/data') ?>" method="post">
+             <button type="submit" name="button" class="btn btn-success">Export data</button>
+            </form></h4>
                  
 
                 </div>
@@ -75,10 +77,11 @@
                         echo "<a class='btn btn-info' href=".site_url("admin/validasi/".$laporan->id_pengaduan).'>Tanggapi</a>';
                         break;
                         case 'proses' :
-                        echo "<a class='btn btn-success' href=".site_url("admin/validasi/".$laporan->id_pengaduan).'>Sudah Ditanggapi</a>';
+                       echo "<a class='btn btn-warning' href=".site_url("admin/edit_tanggapan/".$laporan->id_pengaduan).'>Edit Tanggapan</a>';
+                        echo "<a class='btn btn-success' href=".site_url("admin/selesai_pengaduan/".$laporan->id_pengaduan).'>Selesaikan</a>';
                         break;
                         case 'selesai' :
-                        echo "<a class='btn btn' href=".site_url("admin/validasi/".$laporan->id_pengaduan).' disabled >Selesai</a>';
+                        echo "<a class='btn btn' disabled >Selesai</a>";
                         break;
                       
                       default:

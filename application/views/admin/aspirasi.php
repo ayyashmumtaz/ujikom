@@ -50,7 +50,7 @@
                           </td>
                            
                           <td>
-                            <a class="btn btn-info" href="<?php echo site_url('admin/edit/'.$laporan->id_aspirasi); ?>">Validasi</a>
+                            <a class="btn btn-info" href="<?php echo site_url('admin/validasi_aspirasi/'.$laporan->id_aspirasi); ?>">Validasi</a>
                           </td>
                         </tr>
                       </tbody>

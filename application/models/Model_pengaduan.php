@@ -247,7 +247,40 @@ public function join_tanggap($id){
 return $q->result(); 
 }
 
+public function join_info_tanggap($id){
+
+     $q = $this->db->select('*')
+                  ->from('informasi')
+                  ->where('informasi.id_informasi',$id)
+                  ->get(); 
+return $q->result(); 
 }
 
+public function join_jawaban($id){
+
+     $q = $this->db->select('*')
+                  ->from('jawaban')
+                  ->where('jawaban.id_informasi',$id)
+                  ->get(); 
+return $q->result(); 
+}
+
+
+public function search($keyword){
+    $this->db->like('judul_aspirasi', $keyword);
+    $this->db->or_like('aspirasi', $keyword);
+    
+    $result = $this->db->get('aspirasi')->result(); // Tampilkan data siswa berdasarkan keyword
+    
+    return $result;
+
+}
+
+public function aspirasi_all()
+{
+   return $this->db->get('aspirasi')->result();
+}
+
+}
 /* End of file Model_pengaduan.php */
 /* Location: ./application/models/Model_pengaduan.php */

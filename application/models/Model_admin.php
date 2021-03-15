@@ -36,12 +36,41 @@ public function input_tanggapan_db($tanggapan)
     $this->db->insert('tanggapan',$tanggapan); 
   }
 
+public function input_informasi_db($informasi)
+  {
+    $this->db->insert('jawaban',$informasi); 
+  }
+  
   public function up_status($data) {
 
      $this->db->set('status',$data['status'])
          ->where('id_pengaduan',$data['id_pengaduan'])
         ->update('pengaduan');
 }
+
+public function selesai_status($data) {
+
+     $this->db->set('status',$data['status'])
+         ->where('id_pengaduan',$data['id_pengaduan'])
+        ->update('pengaduan');
+}
+
+public function up_info_status($data) {
+
+     $this->db->set('status',$data['status'])
+         ->where('id_informasi',$data['id_informasi'])
+        ->update('informasi');
+}
+
+
+
+private $_table = "informasi";
+    public function getById($id)
+    {
+    
+
+        return $this->db->get_where($this->_table, ["id_informasi" => $id])->row();
+    }
 
 }
 

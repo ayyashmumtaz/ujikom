@@ -41,7 +41,7 @@
                          
                           <td>
                             
-                            <a href="<?php echo site_url('admin/deleteCarousel/'.$program->id) ?>">Hapus</a>
+                            <a class="btn btn-danger" href="<?php echo site_url('admin/deleteCarousel/'.$program->id) ?>">Hapus</a>
                           </td>
                         </tr>
                       </tbody>

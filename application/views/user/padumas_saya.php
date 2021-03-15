@@ -24,13 +24,13 @@
                   <div class="product-thumbnail-side"><a class="wishlist-btn" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"></a><a class="product-thumbnail d-block" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"><img src="<?= base_url('assets/img/laporan/').$lapor->foto;?>" alt=""></a></div>
                   <div class="product-description"><a class="product-title d-block" href="<?= site_url('laporan/detail_laporan/').$lapor->id_pengaduan;?>"><?= $lapor->judul_pengaduan?></a>
                     <div class="product-rating"><?php switch ($lapor->status) {
-                      case 0 :
+                      case '0' :
                         echo '<button class="btn btn-sm btn-danger" disabled>Belum Diproses</button>';
                         break;
                         case 'proses' :
                         echo '<button class="btn btn-sm btn-info" disabled>Sedang Diproses</button>';
                         break;
-                        case 0 :
+                        case 'selesai' :
                         echo '<button class="btn btn-sm btn-success" disabled>Selesai</button>';
                         break;
                       
@@ -114,7 +114,21 @@
                 <div class="card-body d-flex align-items-center">
                   <div class="product-thumbnail-side"><a class="wishlist-btn" href="<?= site_url('laporan/detail_informasi/').$info->id_informasi;?>"></a><a class="product-thumbnail d-block" href="<"><img src="<?= base_url('');?>" alt=""></a></div>
                   <div class="product-description"><a class="product-title d-block" href="<?= site_url('laporan/detail_informasi/').$info->id_informasi;?>"><?= $info->informasi;?></a>
-                    <div class="product-rating"><button class="btn btn-sm btn-success" disabled><?= $info->kategori_informasi;?></button></div></a>
+                    <div class="product-rating"><?php switch ($info->status) {
+                      case '0' :
+                        echo '<button class="btn btn-sm btn-danger" disabled>Belum Diproses</button>';
+                        break;
+                        case 'proses' :
+                        echo '<button class="btn btn-sm btn-info" disabled>Sudah Dijawab</button>';
+                        break;
+                        case 'selesai' :
+                        echo '<button class="btn btn-sm btn-success" disabled>Selesai</button>';
+                        break;
+                      
+                      default:
+                        # code...
+                        break;
+                    } ?></div></a>
                   </div>
                 </div>
               </div>

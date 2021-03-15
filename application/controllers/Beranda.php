@@ -37,10 +37,13 @@ class Beranda extends CI_Controller {
 
 	public function ruang_public()
 	{
+		$data['aspirasi'] = $this->Model_pengaduan->aspirasi_all();
 		$this->load->view('user/_partials/header');
 		$this->load->view('user/_partials/sidebar');
-		$this->load->view('user/ruang_public.php');
+		$this->load->view('user/ruang_public.php', $data);
 		$this->load->view('user/_partials/footer');
+
+	
 	}
 
 	public function my_padumas()
