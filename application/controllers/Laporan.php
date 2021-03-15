@@ -159,6 +159,7 @@ public function addCarl()
         redirect('admin/addCarousel');
     
     }
+}
 
 }
 
